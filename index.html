@@ -3,17 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title></title>
+    <title>鹌鹑窝</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="container">
-        <h1>Enter the Passcode</h1>
-        <input type="text" id="passcode" placeholder="4-digit passcode">
-        <button onclick="checkPasscode()">Submit</button>
-        <button onclick="showHint()">Hint</button>
-        <p id="hint" style="display: none;">The hint will appear here.</p>
-        <p id="message"></p>
+    <div class="main-container">
+        <div class="container">
+            <h1>请输入密码</h1>
+            <input type="text" id="passcode" placeholder="4位密码">
+            <button onclick="checkPasscode()">进入</button>
+            <button onclick="showHint()">提示</button>
+            <p id="hint" style="display: none;">The hint will appear here.</p>
+            <p id="message"></p>
+        </div>
+        <div id="wrong-container" class="hidden">
+            <p id="wrong-text"></p>
+            <img id="wrong-image" src="img.png" alt="Wrong Image">
+        </div>
     </div>
     <script src="script.js"></script>
 </body>

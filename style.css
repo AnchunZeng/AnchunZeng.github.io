@@ -6,6 +6,13 @@ body {
     height: 100vh;
     margin: 0;
     background-color: #f8f8f8;
+    position: relative;
+}
+
+.main-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .container {
@@ -14,6 +21,7 @@ body {
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    z-index: 1;
 }
 
 input, button {
@@ -28,4 +36,46 @@ button {
 
 #message {
     color: red;
+}
+
+@keyframes rainbowBlink {
+    0% { color: red; }
+    16% { color: orange; }
+    33% { color: yellow; }
+    50% { color: green; }
+    66% { color: blue; }
+    83% { color: indigo; }
+    100% { color: violet; }
+}
+
+.blink-rainbow {
+    animation: rainbowBlink 200ms linear infinite;
+}
+
+.large-image {
+    width: 45vw;  /* 80% of the viewport width */
+    height: auto;  /* Maintain the aspect ratio */
+    max-width: 60vw;
+    max-height: 25vw;  /* To maintain a roughly 16:9 aspect ratio */
+}
+
+.scattered-image {
+    width: 100px;  /* Set the width of the scattered images */
+    height: auto;  /* Maintain the aspect ratio */
+    position: absolute;  /* Position them absolutely within the body */
+    z-index: 0;
+}
+
+#wrong-container {
+    text-align: center;
+    margin-left: 20px; /* Add some space between the containers */
+}
+
+#wrong-image {
+    width: 200px;  /* Set the width of the image */
+    height: auto;  /* Maintain the aspect ratio */
+}
+
+.hidden {
+    display: none;
 }
