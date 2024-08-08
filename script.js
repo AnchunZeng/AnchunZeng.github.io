@@ -34,3 +34,8 @@ function showHint() {
     hint.textContent = '4位噢~~';
     hint.style.display = 'block';
 }
+
+function openGallery() {
+    window.open('gallery.html', '_blank');
+}
+

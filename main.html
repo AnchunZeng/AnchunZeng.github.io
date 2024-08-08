@@ -9,27 +9,54 @@
 <body>
     <div class="container">
         <h1>!</h1>
-        <img src="img.png" alt="Surprise Image" class="large-image">
+        <img src="blue.png" alt="Surprise Image" class="large-image">
     </div>
-    <img src="img.png" alt="Scattered Image 1" class="scattered-image" style="top: 10%; left: 5%;">
-    <img src="img.png" alt="Scattered Image 2" class="scattered-image" style="top: 30%; left: 5%;">
-    <img src="img.png" alt="Scattered Image 3" class="scattered-image" style="top: 50%; left: 5%;">
-    <img src="img.png" alt="Scattered Image 4" class="scattered-image" style="top: 70%; left: 5%;">
-    <img src="img.png" alt="Scattered Image 5" class="scattered-image" style="top: 90%; left: 5%;">
-    <img src="img.png" alt="Scattered Image 6" class="scattered-image" style="top: 10%; right: 5%;">
-    <img src="img.png" alt="Scattered Image 7" class="scattered-image" style="top: 30%; right: 5%;">
-    <img src="img.png" alt="Scattered Image 8" class="scattered-image" style="top: 50%; right: 5%;">
-    <img src="img.png" alt="Scattered Image 9" class="scattered-image" style="top: 70%; right: 5%;">
-    <img src="img.png" alt="Scattered Image 10" class="scattered-image" style="top: 90%; right: 5%;">
-    <img src="img.png" alt="Scattered Image 11" class="scattered-image rotated20" style="top: 10%; left: 15%;">
-    <img src="img.png" alt="Scattered Image 12" class="scattered-image" style="top: 30%; left: 15%;">
-    <img src="img.png" alt="Scattered Image 13" class="scattered-image" style="top: 50%; left: 15%;">
-    <img src="img.png" alt="Scattered Image 14" class="scattered-image" style="top: 70%; left: 15%;">
-    <img src="img.png" alt="Scattered Image 15" class="scattered-image" style="top: 90%; left: 15%;">
-    <img src="img.png" alt="Scattered Image 16" class="scattered-image" style="top: 10%; right: 15%;">
-    <img src="img.png" alt="Scattered Image 17" class="scattered-image" style="top: 30%; right: 15%;">
-    <img src="img.png" alt="Scattered Image 18" class="scattered-image" style="top: 50%; right: 15%;">
-    <img src="firework.gif" alt="Scattered Image 19" class="scattered-image" style="top: 70%; right: 15%;">
-    <img src="img.png" alt="Scattered Image 20" class="scattered-image" style="top: 90%; right: 15%;">
+    <img src="img.png" alt="Scattered Image a1" class="scattered-image" style="top: 10%; left: 5%;">
+    <img src="img.png" alt="Scattered Image a2" class="scattered-image" style="top: 7.5%; left: 15%;">
+    <img src="img.png" alt="Scattered Image a3" class="scattered-image" style="top: 5%; left: 25%;">
+    <img src="img.png" alt="Scattered Image a4" class="scattered-image" style="top: 5%; left: 47%;">
+    <img src="img.png" alt="Scattered Image a5" class="scattered-image" style="top: 7%; right: 30%;">
+    <img src="img.png" alt="Scattered Image a6" class="scattered-image" style="top: 9%; left: 72%;">
+    <img src="img.png" alt="Scattered Image a7" class="scattered-image" style="top: 10%; right: 5%;">
+
+    <img src="img.png" alt="Scattered Image b1" class="scattered-image" style="top: 30%; left: 3.5%;">
+    <img src="img.png" alt="Scattered Image b2" class="scattered-image" style="top: 30%; right: 3.5%;">
+
+    <img src="img.png" alt="Scattered Image c1" class="scattered-image" style="top: 50%; left: 5%;">
+    <img src="blue.png" alt="photo_us" class="photo_us_img" style="top: 50%; right: 3%;" onclick="openGallery()">
+
+    <img src="img.png" alt="Scattered Image d1" class="scattered-image" style="top: 70%; left: 2%;">
+    <img src="img.png" alt="Scattered Image d2" class="scattered-image" style="bottom: 35%; left: 17%;">
+    <img src="meme_point.jpg" alt="meme_point" class="meme_point_img" style="top: 53%; right: 15%;">
+
+
+    <img src="img.png" alt="Scattered Image e1" class="scattered-image" style="bottom: 10%; left: 5%;">
+    <img src="img.png" alt="Scattered Image e2" class="scattered-image" style="bottom: 10%; right: 5%;">
+    <img src="img.png" alt="Scattered Image e3" class="scattered-image" style="bottom: 4%; left: 15%;">
+    <img src="img.png" alt="Scattered Image e4" class="scattered-image" style="bottom: 8%; right: 25%;">
+    <img src="img.png" alt="Scattered Image e5" class="scattered-image" style="bottom: 5%; right: 47%;">
+    <img src="img.png" alt="Scattered Image e6" class="scattered-image" style="bottom: 5%; right: 15%;">
+    <script src="script.js"></script>
+    <script>
+    window.onload = function() {
+        setTimeout(function() {
+            document.querySelector('img[alt="photo_us"]').classList.add('blink-rainbow-frame');
+        }, 10000); // 10 seconds
+        
+        const photoUs = document.querySelector('img[alt="photo_us"]');
+        const memePoint = document.querySelector('img[alt="meme_point"]');
+
+        function positionMemePoint() {
+            const rect = photoUs.getBoundingClientRect();
+            memePoint.style.top = `${rect.top + window.scrollY}px`;
+            // memePoint.style.left = `${rect.right + 1 + window.scrollX}px`;
+            memePoint.style.left = `${rect.left - memePoint.offsetWidth - 1 + window.scrollX}px`;
+            // memePoint.style.right = `${rect.left - 1 + window.scrollX}px`;
+        }
+
+        positionMemePoint();
+        window.addEventListener('resize', positionMemePoint);
+    }
+    </script>
 </body>
 </html>
