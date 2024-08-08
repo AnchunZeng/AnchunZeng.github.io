@@ -80,8 +80,8 @@ button {
 .large-image {
     width: 45vw;  /* 80% of the viewport width */
     height: auto;  /* Maintain the aspect ratio */
-    max-width: 30vw;
-    max-height: 30vw;  /* To maintain a roughly 16:9 aspect ratio */
+    max-width: 24vw;
+    max-height: 24vw;  /* To maintain a roughly 16:9 aspect ratio */
 }
 
 .scattered-image {
